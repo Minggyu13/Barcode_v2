@@ -17,14 +17,7 @@ def perspective_transform(file_path, box_label):
     else:
         ori_img_display = ori_img.copy()
 
-    box = list()
-    # label_file_path = f'C:/Users/qa762/Desktop/Make_my_profile/yolov5/runs/detect/{file_name}/labels/{self.file_name}.txt'
-    # with open(label_file_path, 'r') as file:
-    #     text = file.read().strip()
-    #
-    # box = text.split()
-    # print(box)
-    # box = [0 ,0.121992, 0.396557, 0.148396, 0.121324, 0.954687]  # [0, xmin, ymin, width, height]
+
     box = box_label
     yolov5_xmin = max(int((float(box[1]) - float(box[3]) / 2) * ori_img.shape[1]), 0)
     yolov5_ymin = max(int((float(box[2]) - float(box[4]) / 2) * ori_img.shape[0]), 0)
